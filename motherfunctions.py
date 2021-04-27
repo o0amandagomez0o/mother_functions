@@ -29,14 +29,23 @@ def get_connection(db, user=user, host=host, password=password):
 # fill in the blanks __ to have
 # SQL query
 # and __ db in "get_connection"
-def get_data():
+def get_data(sql_query, db):
     '''
     This function reads in the data from the Codeup db
     and returns a pandas DataFrame with all columns.
     '''
+<<<<<<< HEAD
     sql_query = 'SELECT * FROM __'
     return pd.read_sql(sql_query, get_connection('__'))
        
+=======
+
+    return pd.read_sql(sql_query, get_connection(db))
+    
+    
+    
+    
+>>>>>>> 10c170553991f113d83c2ceb9e89a456c45ae790
     
 def cached_data(file, cached=False):
     '''
