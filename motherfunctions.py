@@ -25,7 +25,7 @@ def get_connection(db, user=user, host=host, password=password):
     
  
     
-    
+#____________________________________________________    
 # fill in the blanks __ to have
 # SQL query
 # and __ db in "get_connection"
@@ -36,29 +36,40 @@ def get_data():
     '''
     sql_query = 'SELECT * FROM __'
     return pd.read_sql(sql_query, get_connection('__'))
-    
-    
-    
-    
+       
     
 def cached_data(file, cached=False):
     '''
     This function reads in data from Codeup database 
-    - writes data to
-    a csv file if cached == False or if cached == True reads in titanic df from
-    a csv file, returns df.
+    - writes data to a csv file 
+    - if cached == False or if cached == True reads in file from
+    a csv file, 
+    
+    returns df.
     '''
     if cached == False or os.path.isfile(file) == False:
         
         # Read fresh data from db into a DataFrame.
-        df = get_titanic_data()
+        df = get_data()
         
         # Write DataFrame to a csv file.
-        df.to_csv('titanic.csv')
+        df.to_csv('file')
         
     else:
         
         # If csv file exists or cached == True, read in data from csv.
-        df = pd.read_csv('titanic.csv', index_col=0)
+        df = pd.read_csv(file, index_col=0)
         
-    return df    
+    return df  
+#_________________________________________________
+
+
+
+
+'''
+*------------------*
+|                  |
+|     PREPARE      |
+|                  |
+*------------------*
+'''
