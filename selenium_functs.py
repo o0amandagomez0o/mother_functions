@@ -33,7 +33,7 @@ passw = os.getenv('PASSWORD')
 host =  os.getenv('HOST')
 port =  os.getenv('PORT')
 
-DATABASE_NAME = 'InspiredTeaching'
+DATABASE_NAME = 'DatabaseName'
 
 source = '/Users/***/Downloads/incidents.zip'
 targetpath = '/Users/***/Downloads'
@@ -47,7 +47,7 @@ RECIPIENTS = [
                  'confirm' : 'EdHandbook Confirmation',
                  'message' : 'Something went wrong'
                  }
-    
+#                ,    
 #                {
 #                'address' : 'name@email.org', 
 #                'subject' : EdHandbook Error',
